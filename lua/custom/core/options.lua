@@ -40,8 +40,14 @@ vim.o.background = "light"
 -- no splash screen
 vim.o.shortmess = "filnxtToOSI"
 
--- clipboard - use system clipboard as defaut register
-vim.opt.clipboard:append("unnamedplus")
-
 -- allows unsaved buffers to be navigated away from
 vim.opt.hidden = true
+
+-- no mouse (mouse handled by the terminal, not by nvim)
+vim.opt.mouse = ''
+
+-- clipboard - use system clipboard as defaut register :
+--vim.opt.clipboard:append("unnamedplus")
+-- or no clipboard (copy/paste handled by the terminal) :
+vim.opt.clipboard = ''
+
