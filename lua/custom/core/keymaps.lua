@@ -27,7 +27,9 @@ vim.keymap.set(
 )
 
 -- spelling
-vim.keymap.set({ "n" }, "<Leader>s", ":set spell<cr>", { desc = "toggle spell on", silent = false })
+vim.keymap.set({ "n" }, "<Leader>ss", ":set spell<cr>", { desc = "toggle spell on", silent = false })
+vim.keymap.set({ "n" }, "<Leader>se", ":set spelllang=en<cr>", { desc = "spell en", silent = false })
+vim.keymap.set({ "n" }, "<Leader>sf", ":set spelllang=fr<cr>", { desc = "spell fr", silent = false })
 
 -- conform format
 vim.keymap.set({ "n", "v" }, "<leader>c", function()
