@@ -12,6 +12,8 @@ sudo apt -y install ripgrep black nodejs cargo ruby-dev libyaml-dev
 npm -g install --save-dev --save-exact prettier
 test -f ~/.prettierrc || echo '{}' > ~/.prettierrc
 touch ~/.prettierignore
+
+gem install puppet-lint
 ```
 
 ## Install some additional fonts
