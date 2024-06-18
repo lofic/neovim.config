@@ -34,7 +34,7 @@ return {
         --"html",
         "jsonls",
         "lua_ls",
-        --"puppet",
+        "puppet",
         "pyright",
         "ruby_lsp",
       },

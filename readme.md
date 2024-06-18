@@ -13,7 +13,7 @@ npm -g install --save-dev --save-exact prettier
 test -f ~/.prettierrc || echo '{}' > ~/.prettierrc
 touch ~/.prettierignore
 
-gem install puppet-lint
+gem install puppet puppet-lint
 ```
 
 ## Install some additional fonts
