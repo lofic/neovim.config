@@ -18,6 +18,10 @@ vim.keymap.set({ "n", "v" }, "j", "gj", { desc = "move down one DISPLAYED line, 
 vim.keymap.set({ "n" }, "<tab>", ":bnext<CR>", { desc = "move to the next buffer", silent = true })
 vim.keymap.set({ "n" }, "<leader><leader>", ":bnext<CR>", { desc = "move to the next buffer", silent = true })
 
+--indent guides
+vim.keymap.set({ "n" }, "<Leader>i", ":IBLToggle<cr>", { desc = "toggle indent guides on/off", silent = false })
+
+
 -- autoclose/autopairs toggle off/on
 vim.keymap.set(
   { "n" },
@@ -28,6 +32,7 @@ vim.keymap.set(
 
 -- spelling
 vim.keymap.set({ "n" }, "<Leader>ss", ":set spell<cr>", { desc = "toggle spell on", silent = false })
+vim.keymap.set({ "n" }, "<Leader>sq", ":set nospell<cr>", { desc = "toggle spell off", silent = false })
 vim.keymap.set({ "n" }, "<Leader>se", ":set spelllang=en<cr>", { desc = "spell en", silent = false })
 vim.keymap.set({ "n" }, "<Leader>sf", ":set spelllang=fr<cr>", { desc = "spell fr", silent = false })
 
