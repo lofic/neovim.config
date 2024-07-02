@@ -31,10 +31,14 @@ vim.keymap.set(
 )
 
 -- spelling
-vim.keymap.set({ "n" }, "<Leader>ss", ":set spell<cr>", { desc = "toggle spell on", silent = false })
+vim.keymap.set({ "n" }, "<Leader>so", ":set spell<cr>", { desc = "toggle spell on", silent = false })
 vim.keymap.set({ "n" }, "<Leader>sq", ":set nospell<cr>", { desc = "toggle spell off", silent = false })
 vim.keymap.set({ "n" }, "<Leader>se", ":set spelllang=en<cr>", { desc = "spell en", silent = false })
 vim.keymap.set({ "n" }, "<Leader>sf", ":set spelllang=fr<cr>", { desc = "spell fr", silent = false })
+-- by default you can still use z= for spelling suggestions under the cursor
+vim.keymap.set({ "n" }, "<leader>ss", function()
+  require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({}))
+end, { desc = "Spelling Suggestions with a Telescope list" })
 
 -- conform format
 vim.keymap.set({ "n", "v" }, "<leader>c", function()

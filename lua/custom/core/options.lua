@@ -1,8 +1,8 @@
 -- file explorer tree style
 vim.cmd("let g:netrw_liststyle = 3")
 
--- misc.
-vim.o.wrap = false
+--  wrap width
+vim.o.wrap = true
 vim.o.textwidth = 100
 
 -- set a ruler to warn of long lines
