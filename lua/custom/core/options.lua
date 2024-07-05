@@ -1,6 +1,12 @@
 -- file explorer tree style
 vim.cmd("let g:netrw_liststyle = 3")
 
+-- cursor
+vim.cmd("hi Cursorn guifg=grey guibg=grey")
+vim.cmd("hi Cursori guifg=black guibg=black")
+-- mode-list, cf :help guicursor
+vim.opt.guicursor = "n-v-c:block-blinkwait700-blinkoff400-blinkon250-Cursorn/lCursorn,i-ci-ve-r-cr-o-sm:ver25-blinkwait700-blinkoff400-blinkon250-Cursori/lCursori"
+
 --  wrap width
 vim.o.wrap = true
 vim.o.textwidth = 100
