@@ -64,3 +64,6 @@ vim.keymap.set("n", "<leader>k", function()
     underline = isLspDiagnosticsVisible,
   })
 end, { desc = "LSP server lint toggle off/on", silent = false })
+
+-- caffeine
+vim.keymap.set({"n", "i"}, "<F15>", "<Nop>")
