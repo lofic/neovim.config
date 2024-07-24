@@ -61,5 +61,8 @@ return {
         }),
       },
     })
+
+    vim.keymap.set({"i", "s"}, "<C-L>", function() luasnip.jump( 1) end, {silent = true})
+    vim.keymap.set({"i", "s"}, "<C-H>", function() luasnip.jump(-1) end, {silent = true})
   end,
 }
