@@ -2,12 +2,12 @@
 
 My custom neovim config in `~/.config/nvim`
 
-## Install some additional system tools
+## Install some additional system and dev tools
 
 On Debian 12 'Bookworm' :
 
 ```bash
-sudo apt -y install ripgrep black nodejs cargo ruby-dev libyaml-dev
+sudo apt -y install black cargo libyaml-dev nodejs ripgrep ruby-dev shellcheck
 
 npm -g install --save-dev --save-exact prettier
 test -f ~/.prettierrc || echo '{}' > ~/.prettierrc
