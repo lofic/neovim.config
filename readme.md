@@ -9,11 +9,13 @@ On Debian 12 'Bookworm' :
 ```bash
 sudo apt -y install black cargo libyaml-dev nodejs ripgrep ruby-dev shellcheck
 
+touch ~/.npmrc
+grep -q prefix ~/.npmrc || echo "prefix=${HOME}/.npm-packages" >> ~/.npmrc
 npm -g install --save-dev --save-exact prettier
 test -f ~/.prettierrc || echo '{}' > ~/.prettierrc
 touch ~/.prettierignore
 
-gem install puppet puppet-lint
+gem install --no-document --user-install puppet puppet-lint
 ```
 
 ## Install some additional fonts
