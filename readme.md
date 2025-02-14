@@ -35,13 +35,31 @@ fc-cache -fv
 
 ## Plugins
 
-- nvim-tree/nvim-tree.lua, a file explorer for neovim
-- folke/which-key.nvim, displays a popup with possible key bindings of the command you started typing
-- nvim-telescope/telescope.vim, a fuzzy finder
+- windwp/nvim-autopairs : insert brackets, parens, quotes in pairs
+- hrsh7th/nvim-cmp : full support for LSP completion related capabilities
+- stevearc/conform.nvim : lightweight yet powerful formatter
+- stevearc/dressing.nvim : improves the default vim.ui interfaces
+- tpope/vim-fugitive : git operations within vim
+- lukas-reineke/indent-blankline.nvim : indentation guides, detection of mixed indentation
+- mfussenegger/nvim-lint : an asynchronous linter plugin complementary to the built-in LSP support
+- nvim-lualine/lualine.nvim : fancy and blazing fast status line
+- rodjek/vim-puppet : formatting, syntax highlighting, automatic resource attributes alignment, etc. for puppet
+- kylechui/nvim-surround : add/change/delete surrounding delimiter pairs with ease
+- nvim-telescope/telescope.vim : a fuzzy finder
+- nvim-tree/nvim-tree.lua : a file explorer for neovim
+- nvim-treesitter/nvim-treesitter : configuration and abstraction layer for treesitter, a source code incremental parser updating the parse tree while the code is edited in real time; used in particular for syntax highlighting
+- cappyzawa/trim.nvim : trim trailing whitespaces and lines
+- folke/trouble.nvim : pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing
+- folke/which-key.nvim : displays a popup with possible key bindings of the command you started typing
 - (...)
 
 and their requirements.
 
+Plugins related to LSP features :
+
+- neovim/nvim-lspconfig : quickstart configs for Nvim LSP
+- williamboman/mason.nvim : easily install and manage LSP servers, DAP servers, linters and formatters
+
 ## Colorscheme
 
-projekt0n/github-nvim-theme, light mode
+projekt0n/github-nvim-theme, light mode (yes, I'm one one those heretics who like light backgrounds and themes)
