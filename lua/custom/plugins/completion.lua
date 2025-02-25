@@ -27,6 +27,8 @@ return {
 
     require("luasnip.loaders.from_lua").lazy_load({ paths = { "~/.config/nvim/lua/custom/snippets" } })
 
+    luasnip.config.setup({ enable_autosnippets = true })
+
     cmp.setup({
       completion = {
         completeopt = "menu,menuone,preview,noselect",
@@ -62,7 +64,12 @@ return {
       },
     })
 
-    vim.keymap.set({"i", "s"}, "<C-L>", function() luasnip.jump( 1) end, {silent = true})
-    vim.keymap.set({"i", "s"}, "<C-H>", function() luasnip.jump(-1) end, {silent = true})
+
+    vim.keymap.set({ "i", "s" }, "<C-L>", function()
+      luasnip.jump(1)
+    end, { silent = true })
+    vim.keymap.set({ "i", "s" }, "<C-H>", function()
+      luasnip.jump(-1)
+    end, { silent = true })
   end,
 }
