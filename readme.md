@@ -44,6 +44,7 @@ fc-cache -fv
 - mfussenegger/nvim-lint : an asynchronous linter plugin complementary to the built-in LSP support
 - nvim-lualine/lualine.nvim : fancy and blazing fast status line
 - rodjek/vim-puppet : formatting, syntax highlighting, automatic resource attributes alignment, etc. for puppet
+- NStefan002/screenkey.nvim : displays the keys you are typing in a floating windows; useful for screencasts, presentations, and live coding sessions
 - kylechui/nvim-surround : add/change/delete surrounding delimiter pairs with ease
 - nvim-telescope/telescope.vim : a fuzzy finder
 - nvim-tree/nvim-tree.lua : a file explorer for neovim
