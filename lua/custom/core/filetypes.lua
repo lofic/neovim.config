@@ -1,6 +1,7 @@
 -- :help vim.filetype.add()
 
--- vim.filetype.add({ extension = { yml = 'yaml.ansible' } })
+vim.filetype.add({ extension = { j2 = 'jinja2' } })
+
 vim.filetype.add({
   pattern = {
     -- those are lua patterns, not regex rules

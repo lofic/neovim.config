@@ -94,6 +94,7 @@ return {
               -- make the language server recognize "vim" global
               diagnostics = {
                 globals = { "vim" },
+                disable = { "cast-local-type" },
               },
               completion = {
                 callSnippet = "Replace",
