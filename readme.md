@@ -16,6 +16,11 @@ test -f ~/.prettierrc || echo '{}' > ~/.prettierrc
 touch ~/.prettierignore
 
 gem install --no-document --user-install puppet puppet-lint
+
+# en_US.UTF-8 locale needed
+sudo apt -y install locales
+sudo sed -i  's/^#[\t ]\(en_US.UTF-8 UTF-8\)/\1/' /etc/locale.gen
+sudo locale-gen
 ```
 
 ## Install some additional fonts
