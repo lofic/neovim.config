@@ -11,9 +11,22 @@ return {
 
     -- configure treesitter
     treesitter.setup({ -- enable syntax highlighting
+
+      -- Install parsers synchronously (only applied to `ensure_installed`)
+      sync_install = false,
+
+      -- Automatically install missing parsers when entering buffer
+      auto_install = true,
+
+      -- List of parsers to ignore installing
+      ignore_install = { },
+
+      modules = {},
+
       highlight = {
         enable = true,
       },
+
       -- enable indentation
       indent = { enable = true },
       -- enable autotagging (w/ nvim-ts-autotag plugin)

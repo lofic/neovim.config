@@ -27,6 +27,9 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       -- cf https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+
+      automatic_installation = true,
+
       ensure_installed = {
         "ansiblels",
         "bashls",
