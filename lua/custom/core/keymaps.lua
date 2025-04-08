@@ -26,7 +26,7 @@ vim.keymap.set({ "n" }, "<Leader>i", ":IBLToggle<cr>", { desc = "toggle indent g
 vim.keymap.set(
   { "n" },
   "<Leader>a",
-  ":lua toggle_autopairs()<cr>",
+  ":lua ToggleAutopairs()<cr>",
   { desc = "toggle autopairs off/on", silent = false }
 )
 
@@ -67,3 +67,6 @@ end, { desc = "LSP server lint toggle off/on", silent = false })
 
 -- caffeine
 vim.keymap.set({"n", "i"}, "<F15>", "<Nop>")
+
+-- Detele trailing whitespaces
+vim.keymap.set({ "n" }, "<Leader>w", ":lua DeleteTrailingWhitespaces() <cr>", { desc = "delete trailing whitespaces", silent = false })
