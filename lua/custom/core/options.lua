@@ -53,7 +53,6 @@ vim.opt.hidden = true
 vim.opt.mouse = ''
 
 -- clipboard - use system clipboard as defaut register :
---vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard:append("unnamedplus")
 -- or no clipboard (copy/paste handled by the terminal) :
-vim.opt.clipboard = ''
-
+--vim.opt.clipboard = ''
