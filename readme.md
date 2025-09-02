@@ -7,7 +7,7 @@ My custom neovim config in `~/.config/nvim`
 On Debian 12 'Bookworm' :
 
 ```bash
-sudo apt -y install black cargo libyaml-dev nodejs ripgrep ruby-dev shellcheck python3-venv
+sudo apt -y install ack black cargo libyaml-dev nodejs ripgrep ruby-dev shellcheck python3-venv
 
 touch ~/.npmrc
 grep -q prefix ~/.npmrc || echo "prefix=${HOME}/.npm-packages" >> ~/.npmrc
@@ -40,6 +40,7 @@ fc-cache -fv
 
 ## Plugins
 
+- mileszs/ack.vim : old school bulk search and replace through all project's files, because I'm used to it
 - windwp/nvim-autopairs : insert brackets, parens, quotes in pairs
 - hrsh7th/nvim-cmp : full support for LSP completion related capabilities
 - stevearc/conform.nvim : lightweight yet powerful formatter
