@@ -105,6 +105,21 @@ return {
       }
     )
   ),
+  --
+  -- ansible resource builtin include_vars
+  s(
+    "abv",
+    fmt(
+      [[
+      - name: Include some vars
+        ansible.builtin.include_vars:
+            file: '{}'
+      ]],
+      {
+        i(1, "var_file.yaml"),
+      }
+    )
+  ),
 
   -- ansible resource builtin service
   s(
@@ -157,4 +172,6 @@ return {
       }
     )
   ),
+
+
 }
