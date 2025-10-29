@@ -1,3 +1,4 @@
+require("custom.core.variables")
 require("custom.core.options")
 require("custom.core.functions")
 require("custom.core.keymaps")

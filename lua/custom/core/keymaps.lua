@@ -21,14 +21,8 @@ vim.keymap.set({ "n" }, "<leader><leader>", ":bnext<CR>", { desc = "move to the 
 --indent guides
 vim.keymap.set({ "n" }, "<Leader>i", ":IBLToggle<cr>", { desc = "toggle indent guides on/off", silent = false })
 
-
 -- autoclose/autopairs toggle off/on
-vim.keymap.set(
-  { "n" },
-  "<Leader>a",
-  ":lua ToggleAutopairs()<cr>",
-  { desc = "toggle autopairs off/on", silent = false }
-)
+vim.keymap.set({ "n" }, "<Leader>a", ":lua ToggleAutopairs()<cr>", { desc = "toggle autopairs off/on", silent = false })
 
 -- spelling
 vim.keymap.set({ "n" }, "<Leader>so", ":set spell<cr>", { desc = "toggle spell on", silent = false })
@@ -56,17 +50,28 @@ vim.keymap.set(
 -- Lint LSP server toggle off/on
 -- cf https://samuellawrentz.com/hacks/neovim/disable-annoying-eslint-lsp-server-and-hide-virtual-text/
 local isLspDiagnosticsVisible = true
+local signs_switch
 vim.keymap.set("n", "<leader>k", function()
   isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+  if isLspDiagnosticsVisible then
+    signs_switch = vim.g.diagnostic_signs
+  else
+    signs_switch = false
+  end
   vim.diagnostic.config({
     virtual_text = isLspDiagnosticsVisible,
-    signs = isLspDiagnosticsVisible,
+    signs = signs_switch,
     underline = isLspDiagnosticsVisible,
   })
 end, { desc = "LSP server lint toggle off/on", silent = false })
 
 -- caffeine
-vim.keymap.set({"n", "i"}, "<F15>", "<Nop>")
+vim.keymap.set({ "n", "i" }, "<F15>", "<Nop>")
 
 -- Detele trailing whitespaces
-vim.keymap.set({ "n" }, "<Leader>w", ":lua DeleteTrailingWhitespaces() <cr>", { desc = "delete trailing whitespaces", silent = false })
+vim.keymap.set(
+  { "n" },
+  "<Leader>w",
+  ":lua DeleteTrailingWhitespaces() <cr>",
+  { desc = "delete trailing whitespaces", silent = false }
+)
