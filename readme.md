@@ -16,6 +16,7 @@ test -f ~/.prettierrc || echo '{}' > ~/.prettierrc
 touch ~/.prettierignore
 
 gem install --no-document --user-install puppet puppet-lint
+pip install ansible-lint
 
 # en_US.UTF-8 locale needed
 sudo apt -y install locales

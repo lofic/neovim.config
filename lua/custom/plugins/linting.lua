@@ -4,23 +4,21 @@ return {
   config = function()
     local lint = require("lint")
 
+    -- Create a linter which outputs nothing.
+    -- Used in a custom keymap to toggle on/off the linting.
+    lint.linters.dummy = {
+      cmd = "true",
+      stdin = true,
+      args = {},
+      stream = nil,
+      ignore_exitcode = false,
+      env = nil,
+      parser = require("lint.parser").for_sarif(),
+    }
+
     lint.linters_by_ft = {
       python = { "pylint" },
       ruby = { "rubocop" },
     }
-
-    local lint = false
-
-    local toggle_lint = function()
-      if lint == true then
-        lint = false
-        vim.diagnostic.reset(nil, 0)
-      else
-        lint = true
-        require("lint").try_lint()
-      end
-    end
-
-    vim.keymap.set({ "n" }, "<leader>l", toggle_lint, { noremap = true, desc = "toggle lint", silent = false })
   end,
 }

@@ -21,14 +21,8 @@ vim.keymap.set({ "n" }, "<leader><leader>", ":bnext<CR>", { desc = "move to the 
 --indent guides
 vim.keymap.set({ "n" }, "<Leader>i", ":IBLToggle<cr>", { desc = "toggle indent guides on/off", silent = false })
 
-
 -- autoclose/autopairs toggle off/on
-vim.keymap.set(
-  { "n" },
-  "<Leader>a",
-  ":lua ToggleAutopairs()<cr>",
-  { desc = "toggle autopairs off/on", silent = false }
-)
+vim.keymap.set({ "n" }, "<Leader>a", ":lua ToggleAutopairs()<cr>", { desc = "toggle autopairs off/on", silent = false })
 
 -- spelling
 vim.keymap.set({ "n" }, "<Leader>so", ":set spell<cr>", { desc = "toggle spell on", silent = false })
@@ -53,20 +47,33 @@ vim.keymap.set(
   { desc = "set the filetype to yaml.ansible", silent = false }
 )
 
--- Lint LSP server toggle off/on
--- cf https://samuellawrentz.com/hacks/neovim/disable-annoying-eslint-lsp-server-and-hide-virtual-text/
-local isLspDiagnosticsVisible = true
+-- Diagnostics LSP server toggle off/on
 vim.keymap.set("n", "<leader>k", function()
-  isLspDiagnosticsVisible = not isLspDiagnosticsVisible
-  vim.diagnostic.config({
-    virtual_text = isLspDiagnosticsVisible,
-    signs = isLspDiagnosticsVisible,
-    underline = isLspDiagnosticsVisible,
-  })
-end, { desc = "LSP server lint toggle off/on", silent = false })
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = "LSP server diagnostics toggle off/on", silent = false })
+
+-- Lint toggle on/off
+local linting = false
+local toggle_lint = function()
+  if linting == false then
+    linting = true
+    require("lint").try_lint()
+  else
+    linting = false
+    vim.diagnostic.reset()
+    require("lint").try_lint("null")
+    vim.cmd("LspRestart")
+  end
+end
+vim.keymap.set({ "n" }, "<leader>l", toggle_lint, { noremap = true, desc = "toggle lint", silent = false })
 
 -- caffeine
-vim.keymap.set({"n", "i"}, "<F15>", "<Nop>")
+vim.keymap.set({ "n", "i" }, "<F15>", "<Nop>")
 
 -- Detele trailing whitespaces
-vim.keymap.set({ "n" }, "<Leader>w", ":lua DeleteTrailingWhitespaces() <cr>", { desc = "delete trailing whitespaces", silent = false })
+vim.keymap.set(
+  { "n" },
+  "<Leader>w",
+  ":lua DeleteTrailingWhitespaces() <cr>",
+  { desc = "delete trailing whitespaces", silent = false }
+)
