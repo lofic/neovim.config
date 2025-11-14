@@ -70,7 +70,7 @@ vim.keymap.set({ "n" }, "<leader>l", toggle_lint, { noremap = true, desc = "togg
 -- caffeine
 vim.keymap.set({ "n", "i" }, "<F15>", "<Nop>")
 
--- Detele trailing whitespaces
+-- Delete trailing whitespaces
 vim.keymap.set(
   { "n" },
   "<Leader>w",
