@@ -18,6 +18,40 @@ return {
     t({ "ansible.builtin." }),
   }),
 
+  -- ansible resource builtin assert
+  s(
+    "aba",
+    fmt(
+      [[
+      - name: Test
+        ansible.builtin.assert:
+            that: '{}'
+      ]],
+      {
+        i(1, "foo == bar"),
+      }
+    )
+  ),
+
+  -- ansible assertive
+  s(
+    "aa",
+    fmt(
+      [[
+      - name: Test
+        assert:  # noqa fqcn-builtins
+            that: '{}'
+            fail_msg: "{}"
+            success_msg: "{}"
+      ]],
+      {
+        i(1, "foo == bar"),
+        i(2, "Failure"),
+        i(3, "Success"),
+      }
+    )
+  ),
+
   -- ansible resource builtin command
   s(
     "abcmd",
@@ -54,6 +88,36 @@ return {
     )
   ),
 
+  -- ansible resource builtin debug message
+  s(
+    "abdm",
+    fmt(
+      [[
+      - name: Debug message
+        ansible.builtin.debug:
+            message: '{}'
+      ]],
+      {
+        i(1, "message here"),
+      }
+    )
+  ),
+
+  -- ansible resource builtin debug variable
+  s(
+    "abdv",
+    fmt(
+      [[
+      - name: Debug - variable
+        ansible.builtin.debug:
+            var: {}
+      ]],
+      {
+        i(1, "a_variable"),
+      }
+    )
+  ),
+
   -- ansible resource builtin file
   s(
     "abf",
@@ -86,6 +150,20 @@ return {
       {
         i(1, "Something is wrong"),
         i(2, "a_condition != 'OK'"),
+      }
+    )
+  ),
+
+  -- ansible resource builtin include_tasks
+  s(
+    "abit",
+    fmt(
+      [[
+      - name: Include tasks
+        ansible.builtin.include_tasks: {}
+      ]],
+      {
+        i(1, "incl/tasks.yml"),
       }
     )
   ),
@@ -150,6 +228,22 @@ return {
       ]],
       {
         i(1, "commands"),
+      }
+    )
+  ),
+
+  -- ansible resource builtin set_fact
+  s(
+    "absf",
+    fmt(
+      [[
+      - name: Set fact
+        ansible.builtin.set_fact:
+            {}: "{}"
+      ]],
+      {
+        i(1, "foo"),
+        i(2, "bar"),
       }
     )
   ),
