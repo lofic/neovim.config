@@ -7,7 +7,7 @@ My custom neovim config in `~/.config/nvim`
 On Debian 12 'Bookworm' :
 
 ```bash
-sudo apt -y install ack black cargo libyaml-dev nodejs ripgrep ruby-dev shellcheck python3-venv
+sudo apt -y install ack black bundler cargo libyaml-dev nodejs ripgrep ruby-dev shellcheck python3-venv
 
 touch ~/.npmrc
 grep -q prefix ~/.npmrc || echo "prefix=${HOME}/.npm-packages" >> ~/.npmrc
